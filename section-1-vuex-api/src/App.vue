@@ -13,7 +13,7 @@
 
           <li class="pure-menu-item">
             <router-link to="/mutations"
-                         class="pure-menu-link pure-menu-disabled"
+                         class="pure-menu-link"
                          active-class="pure-menu-link-active">
               Mutations
             </router-link>
@@ -21,7 +21,7 @@
 
           <li class="pure-menu-item">
             <router-link to="/getters"
-                         class="pure-menu-link pure-menu-disabled"
+                         class="pure-menu-link"
                          active-class="pure-menu-link-active">
               Getters
             </router-link>
