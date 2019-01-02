@@ -3,29 +3,34 @@
     <div class="header">
       <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
-          <li class="pure-menu-item">
-            <router-link to="/state"
-                         class="pure-menu-link"
-                         active-class="pure-menu-link-active">
-              State
-            </router-link>
-          </li>
+          <router-link tag="li"
+                       active-class="pure-menu-selected"
+                       class="pure-menu-item"
+                       to="/state">
+            <a class="pure-menu-link">State</a>
+          </router-link>
 
-          <li class="pure-menu-item">
-            <router-link to="/mutations"
-                         class="pure-menu-link"
-                         active-class="pure-menu-link-active">
-              Mutations
-            </router-link>
-          </li>
+          <router-link tag="li"
+                       active-class="pure-menu-selected"
+                       class="pure-menu-item"
+                       to="/mutations">
+            <a class="pure-menu-link">Mutations</a>
+          </router-link>
 
-          <li class="pure-menu-item">
-            <router-link to="/getters"
-                         class="pure-menu-link"
-                         active-class="pure-menu-link-active">
-              Getters
-            </router-link>
-          </li>
+          <router-link tag="li"
+                       active-class="pure-menu-selected"
+                       class="pure-menu-item"
+                       to="/getters">
+            <a class="pure-menu-link">Getters</a>
+          </router-link>
+
+          <router-link tag="li"
+                       active-class="pure-menu-selected"
+                       class="pure-menu-item"
+                       to="/actions">
+            <a class="pure-menu-link">Actions</a>
+          </router-link>
+
         </ul>
       </div>
     </div>
