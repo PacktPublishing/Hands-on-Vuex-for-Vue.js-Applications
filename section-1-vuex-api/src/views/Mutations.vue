@@ -1,3 +1,5 @@
 <template>
-  <h1>Hello, World</h1>
+  <div>
+    <h1>Changing <code>count</code></h1>
+  </div>
 </template>
