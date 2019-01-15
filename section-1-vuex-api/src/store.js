@@ -8,5 +8,15 @@ export default new Vuex.Store({
 
   state: {
     count: 0
+  },
+
+  mutations: {
+    INCREMEMNT_COUNT(state) {
+      state.count++;
+    },
+
+    ADD_TO_COUNT(state, n) {
+      state.count += n;
+    }
   }
 });
