@@ -11,11 +11,11 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    INCREMEMNT_COUNT(state) {
+    INCREMENT(state) {
       state.count++;
     },
 
-    ADD_TO_COUNT(state, n) {
+    ADD(state, n) {
       state.count += n;
     }
   }
