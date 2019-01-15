@@ -42,6 +42,12 @@
   </div>
 </template>
 
+<style>
+.pure-button {
+  margin: 5px;
+}
+</style>
+
 <style scoped>
 .content {
   padding: 0.5em 1em;
