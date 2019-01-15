@@ -1,3 +1,3 @@
 <template>
-  <h1>Hello, World</h1>
+  <h2>Changing <code>count</code> with actions</h2>
 </template>
