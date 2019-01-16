@@ -15,7 +15,7 @@ export default new Vuex.Store({
       state.count++;
     },
 
-    ADD(state, n) {
+    ADD_N(state, n) {
       state.count += n;
     }
   }
