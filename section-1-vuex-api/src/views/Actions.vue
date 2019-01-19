@@ -14,6 +14,5 @@
       Get Trivia
     </button>
     <div>{{ $store.state.trivia }}</div>
-
   </div>
 </template>
