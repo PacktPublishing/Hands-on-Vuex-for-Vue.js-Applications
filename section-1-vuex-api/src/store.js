@@ -32,5 +32,15 @@ export default new Vuex.Store({
         .then(res => res.text())
         .then(trivia => commit("SET_TRIVIA", trivia));
     }
+  },
+
+  getters: {
+    doubledCount(state) {
+      return state.count * 2;
+    },
+
+    countPlusN(state) {
+      return n => state.count + n;
+    }
   }
 });
