@@ -4,8 +4,13 @@
 
     <div>Count is {{ $store.state.count }}</div>
 
-    <button class="pure-button" @click="$store.commit('INCREMENT')">
+    <button class="pure-button" @click="$store.dispatch('addToCount', 1)">
       Increment
     </button>
+
+    <button class="pure-button" @click="$store.dispatch('updateTrivia')">
+      Get Trivia
+    </button>
+    <div>{{ $store.state.trivia }}</div>
   </div>
 </template>
