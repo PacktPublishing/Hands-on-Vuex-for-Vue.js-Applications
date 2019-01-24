@@ -4,13 +4,26 @@
 
     <div>Count is {{ $store.state.count }}</div>
 
-    <button class="pure-button" @click="$store.dispatch('addToCount', 1)">
+    <button class="pure-button" @click="addToCount(1)">
       Increment
     </button>
 
-    <button class="pure-button" @click="$store.dispatch('updateTrivia')">
+    <button class="pure-button" @click="triviaUpdate()">
       Get Trivia
     </button>
     <div>{{ $store.state.trivia }}</div>
   </div>
 </template>
+
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  methods: {
+    ...mapActions(["addToCount"]),
+    ...mapActions({
+      triviaUpdate: "updateTrivia"
+    })
+  }
+};
+</script>
