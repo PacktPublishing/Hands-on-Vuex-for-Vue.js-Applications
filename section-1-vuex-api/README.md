@@ -1,4 +1,4 @@
-# Vuex API
+# Code for Section 1: Vuex API
 
 ## Project setup
 ```
