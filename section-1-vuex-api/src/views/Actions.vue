@@ -8,7 +8,7 @@
       Increment
     </button>
 
-    <button class="pure-button" @click="triviaUpdate()">
+    <button class="pure-button" @click="updateTrivia()">
       Get Trivia
     </button>
     <div>{{ $store.state.trivia }}</div>
@@ -20,10 +20,7 @@ import { mapActions } from "vuex";
 
 export default {
   methods: {
-    ...mapActions(["addToCount"]),
-    ...mapActions({
-      triviaUpdate: "updateTrivia"
-    })
+    ...mapActions(["addToCount", "updateTrivia"])
   }
 };
 </script>
