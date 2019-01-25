@@ -10,7 +10,7 @@
     </button>
 
     <button class="pure-button"
-            @click="triviaUpdate()">
+            @click="updateTrivia()">
       Get Trivia
     </button>
     <div>{{ $store.state.trivia }}</div>
@@ -22,10 +22,7 @@ import { mapActions } from "vuex";
 
 export default {
   methods: {
-    ...mapActions(["addToCount"]),
-    ...mapActions({
-      triviaUpdate: "updateTrivia"
-    })
+    ...mapActions(["addToCount", "updateTrivia"])
   }
 };
 </script>
