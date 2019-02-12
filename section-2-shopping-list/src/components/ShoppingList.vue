@@ -21,6 +21,7 @@
         <div class="pure-controls">
           <button
             @click="submitForm"
+            :disabled="!newItem.name || !newItem.price || !newItem.quantity"
             type="button"
             class="pure-button pure-button-primary"
           >
@@ -59,14 +60,14 @@ const INITIAL_ITEM = {
 export default {
   data() {
     return {
-      newItem: INITIAL_ITEM
+      newItem: Object.assign({}, INITIAL_ITEM)
     };
   },
 
   methods: {
     submitForm() {
       this.$store.commit("ADD_ITEM_TO_LIST", this.newItem);
-      this.newItem = INITIAL_ITEM;
+      this.newItem = Object.assign({}, INITIAL_ITEM);
     }
   }
 };
