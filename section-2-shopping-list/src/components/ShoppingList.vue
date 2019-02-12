@@ -10,7 +10,7 @@
 
         <div class="pure-control-group">
           <label for="price">Item Price</label>
-          <input type="number" v-model="newItem.price" id="price" />
+          <input type="number" v-model="newItem.price" id="price" step="0.01" />
         </div>
 
         <div class="pure-control-group">
