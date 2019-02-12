@@ -1,7 +1,9 @@
+import "purecss/build/pure-min.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
-import "purecss/build/pure-min.css";
 
 Vue.config.productionTip = false;
 
