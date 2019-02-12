@@ -20,9 +20,9 @@ export default new Vuex.Store({
       });
     },
 
-    REMOVE_ITEM_FROM_LIST(state, { id }) {
-      const itemIndex = state.shoppingList.find(item => item.id === id);
-      state.shoppingList.slice(itemIndex, 1);
+    REMOVE_ITEM_FROM_LIST(state, item) {
+      const itemIndex = state.shoppingList.indexOf(item);
+      state.shoppingList.splice(itemIndex, 1);
     },
 
     EDIT_ITEM_NAME(state, { item, newName }) {
