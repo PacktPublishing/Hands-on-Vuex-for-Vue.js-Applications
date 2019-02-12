@@ -16,7 +16,7 @@ export default new Vuex.Store({
         id: uuid++,
         name,
         quantity: parseInt(quantity),
-        price: parseInt(price)
+        price: parseFloat(price)
       });
     },
 
