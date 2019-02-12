@@ -6,6 +6,7 @@
       </div>
       <div class="content">
         <shopping-list></shopping-list>
+        <items-summary></items-summary>
       </div>
     </div>
   </div>
@@ -13,11 +14,13 @@
 
 <script>
 import ShoppingList from "./components/ShoppingList.vue";
+import ItemsSummary from "./components/ItemsSummary.vue";
 
 export default {
   name: "App",
   components: {
-    ShoppingList
+    ShoppingList,
+    ItemsSummary
   }
 };
 </script>

@@ -28,5 +28,18 @@ export default new Vuex.Store({
     EDIT_ITEM_NAME(state, { item, newName }) {
       item.name = newName;
     }
+  },
+
+  getters: {
+    totalQuantity(state) {
+      return state.shoppingList.reduce((acc, item) => acc + item.quantity, 0);
+    },
+
+    totalPrice(state) {
+      return state.shoppingList.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+    }
   }
 });
