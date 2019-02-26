@@ -11,7 +11,7 @@ export default new Vuex.Store({
   state: {
     books: books, // array of { title, description, author, lists (string array) }
 
-    lists: [], // array of strings
+    lists: [], // array of { name, description }
 
     users: []
   },
