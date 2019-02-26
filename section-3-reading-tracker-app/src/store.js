@@ -16,5 +16,10 @@ export default new Vuex.Store({
     lists // Array of { id, name, description }
   },
 
-  mutations: {}
+  mutations: {
+    CREATE_LIST(state, newList) {
+      newList.id = nextId++;
+      state.lists.push(newList);
+    }
+  },
 });
