@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="columns" v-for="book in books" :key="book.title">
+    <div class="columns" v-for="book in books" :key="book.id">
       <div class="column">
         {{ book.title }}
       </div>
