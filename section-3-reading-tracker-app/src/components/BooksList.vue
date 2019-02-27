@@ -81,11 +81,11 @@ export default {
 
   methods: {
     addToList(book, list) {
-      // TODO: Implement
+      this.$store.commit("ADD_BOOK_TO_LIST", { book, list });
     },
 
     removeFromList(book, list) {
-      // TODO: Implement
+      this.$store.commit("REMOVE_BOOK_FROM_LIST", { book, list });
     }
   }
 };
