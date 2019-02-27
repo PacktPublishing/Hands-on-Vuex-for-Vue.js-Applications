@@ -35,13 +35,6 @@
     "publishedDate": "2000-02-29"
   },
   {
-    "id": 5,
-    "title": "Angus, Thongs and Full-Frontal Snogging",
-    "author": "Louise Rennison",
-    "pageCount": 272,
-    "publishedDate": "1999-01-01"
-  },
-  {
     "id": 6,
     "title": "Stuck in Neutral",
     "author": "Terry Trueman",
@@ -117,13 +110,6 @@
     "author": "K. L. Going",
     "pageCount": 192,
     "publishedDate": "2003-06-23"
-  },
-  {
-    "id": 17,
-    "title": "The Earth, My Butt, and Other Big Round Things",
-    "author": "Carolyn Mackler",
-    "pageCount": 256,
-    "publishedDate": "2003-07-14"
   },
   {
     "id": 18,
