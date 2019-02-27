@@ -34,5 +34,16 @@ export default new Vuex.Store({
       const index = book.lists.indexOf(list);
       book.lists.splice(index, 1);
     }
+  },
+
+  getters: {
+    listById(state) {
+      return id => state.lists.find(list => list.id === parseInt(id));
+    },
+
+    booksForList(state) {
+      return list =>
+        state.books.filter(book => book.lists && book.lists.indexOf(list) >= 0);
+    }
   }
 });
