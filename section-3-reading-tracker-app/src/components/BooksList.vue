@@ -70,6 +70,12 @@ export default {
     }
   },
 
+  data() {
+    return {
+      listSearch: ""
+    };
+  },
+
   computed: {
     filteredLists() {
       return this.$store.state.lists.filter(
