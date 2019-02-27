@@ -32,7 +32,7 @@ export default new Vuex.Store({
 
     REMOVE_BOOK_FROM_LIST(state, { book, list }) {
       const index = book.lists.indexOf(list);
-      book.lists.slice(index, 1);
+      book.lists.splice(index, 1);
     }
   }
 });
