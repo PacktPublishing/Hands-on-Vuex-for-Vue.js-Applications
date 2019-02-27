@@ -20,6 +20,19 @@ export default new Vuex.Store({
     CREATE_LIST(state, newList) {
       newList.id = nextId++;
       state.lists.push(newList);
+    },
+
+    ADD_BOOK_TO_LIST(state, { book, list }) {
+      if (!book.lists) {
+        Vue.set(book, "lists", []);
+      }
+
+      book.lists.push(list);
+    },
+
+    REMOVE_BOOK_FROM_LIST(state, { book, list }) {
+      const index = book.lists.indexOf(list);
+      book.lists.slice(index, 1);
     }
   },
 });
