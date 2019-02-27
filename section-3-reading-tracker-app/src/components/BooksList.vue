@@ -41,6 +41,8 @@
             autocomplete
             :data="filteredLists"
             field="name"
+            @add="addToList(book, $event)"
+            @remove="removeFromList(book, $event)"
             :open-on-focus="true"
             :keep-first="true"
             type="is-primary"
@@ -58,6 +60,25 @@ export default {
     books: {
       type: Array,
       required: true
+    }
+  },
+
+  computed: {
+    filteredLists() {
+      return this.$store.state.lists.filter(
+        list =>
+          list.name.toLowerCase().indexOf(this.listSearch.toLowerCase()) >= 0
+      );
+    }
+  },
+
+  methods: {
+    addToList(book, list) {
+      // TODO: Implement
+    },
+
+    removeFromList(book, list) {
+      // TODO: Implement
     }
   }
 };

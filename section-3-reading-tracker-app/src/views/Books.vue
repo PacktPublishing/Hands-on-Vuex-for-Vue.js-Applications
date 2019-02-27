@@ -34,13 +34,6 @@ export default {
         (this.currentPage - 1) * this.itemsPerPage,
         this.currentPage * this.itemsPerPage
       );
-    },
-
-    filteredLists() {
-      return this.$store.state.lists.filter(
-        list =>
-          list.name.toLowerCase().indexOf(this.listSearch.toLowerCase()) >= 0
-      );
     }
   }
 };
