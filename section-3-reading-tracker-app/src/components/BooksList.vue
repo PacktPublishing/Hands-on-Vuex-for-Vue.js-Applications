@@ -37,6 +37,7 @@
         <b-field>
           <b-taginput
             placeholder="Add book to list"
+            :value="book.lists"
             @typing="listSearch = $event"
             autocomplete
             :data="filteredLists"
