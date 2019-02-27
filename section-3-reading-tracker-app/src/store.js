@@ -8,17 +8,15 @@ Vue.use(Vuex);
 
 let nextId = 200;
 export default new Vuex.Store({
-  strict: process.env.NODE_ENV === "production",
+  strict: process.env.NODE_ENV !== "production",
 
   state: {
-    books: books, // array of { id, title, author, pageCount, publishedDate, lists (array of list ids) }
+    books: books, // array of { id, title, author, pageCount, publishedDate, lists (array of lists) }
 
     lists: lists, // array of { id, name, description }
 
     users: []
   },
 
-  mutations: {},
-
-  actions: {}
+  mutations: {}
 });
