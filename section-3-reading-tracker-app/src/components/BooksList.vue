@@ -36,10 +36,13 @@
       <div class="column">
         <b-field>
           <b-taginput
-            placeholder="Add to list"
+            placeholder="Add book to list"
+            @typing="listSearch = $event"
             autocomplete
-            :data="$store.state.lists"
+            :data="filteredLists"
             field="name"
+            :open-on-focus="true"
+            :keep-first="true"
             type="is-primary"
           >
           </b-taginput>
