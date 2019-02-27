@@ -1,0 +1,499 @@
+[
+  {
+    "id": 0,
+    "title": "Skellig",
+    "author": "David Almond",
+    "pageCount": 176,
+    "publishedDate": "1998-08-11"
+  },
+  {
+    "id": 1,
+    "title": "Speak",
+    "author": "Laurie Halse Anderson",
+    "pageCount": 197,
+    "publishedDate": "1999-10-22"
+  },
+  {
+    "id": 2,
+    "title": "Hard Love",
+    "author": "Ellen Wittlinger",
+    "pageCount": 256,
+    "publishedDate": "1999-10-23"
+  },
+  {
+    "id": 3,
+    "title": "Many Stones",
+    "author": "Carolyn Coman",
+    "pageCount": 161,
+    "publishedDate": "2000-10-27"
+  },
+  {
+    "id": 4,
+    "title": "The Body of Christopher Creed",
+    "author": "Carol Plum-Ucci",
+    "pageCount": 259,
+    "publishedDate": "2000-02-29"
+  },
+  {
+    "id": 5,
+    "title": "Angus, Thongs and Full-Frontal Snogging",
+    "author": "Louise Rennison",
+    "pageCount": 272,
+    "publishedDate": "1999-01-01"
+  },
+  {
+    "id": 6,
+    "title": "Stuck in Neutral",
+    "author": "Terry Trueman",
+    "pageCount": 144,
+    "publishedDate": "2000-06-30"
+  },
+  {
+    "id": 7,
+    "title": "The Ropemaker",
+    "author": "Peter Dickinson",
+    "pageCount": 384,
+    "publishedDate": "2001-10-23"
+  },
+  {
+    "id": 8,
+    "title": "Heart to Heart",
+    "author": "Jan Greenberg",
+    "pageCount": 80,
+    "publishedDate": "2001-04-01"
+  },
+  {
+    "id": 9,
+    "title": "Freewill",
+    "author": "Chris Lynch",
+    "pageCount": 160,
+    "publishedDate": "2001-03-01"
+  },
+  {
+    "id": 10,
+    "title": "True Believer",
+    "author": "Virginia Euwer Wolff",
+    "pageCount": 264,
+    "publishedDate": "2001-02-01"
+  },
+  {
+    "id": 11,
+    "title": "The House of the Scorpion",
+    "author": "Nancy Farmer",
+    "pageCount": 400,
+    "publishedDate": "2002-10-23"
+  },
+  {
+    "id": 12,
+    "title": "My Heartbeat",
+    "author": "Garret Freymann-Weyr",
+    "pageCount": 154,
+    "publishedDate": "2002-04-29"
+  },
+  {
+    "id": 13,
+    "title": "Hole in My Life",
+    "author": "Jack Gantos",
+    "pageCount": 199,
+    "publishedDate": "2002-03-26"
+  },
+  {
+    "id": 14,
+    "title": "A Northern Light",
+    "author": "Jennifer Donnelly",
+    "pageCount": 396,
+    "publishedDate": "2003-04-01"
+  },
+  {
+    "id": 15,
+    "title": "Keesha's House",
+    "author": "Helen Frost",
+    "pageCount": 144,
+    "publishedDate": "2003-04-02"
+  },
+  {
+    "id": 16,
+    "title": "Fat Kid Rules the World",
+    "author": "K. L. Going",
+    "pageCount": 192,
+    "publishedDate": "2003-06-23"
+  },
+  {
+    "id": 17,
+    "title": "The Earth, My Butt, and Other Big Round Things",
+    "author": "Carolyn Mackler",
+    "pageCount": 256,
+    "publishedDate": "2003-07-14"
+  },
+  {
+    "id": 18,
+    "title": "Airborn",
+    "author": "Kenneth Oppel",
+    "pageCount": 544,
+    "publishedDate": "2004-10-23"
+  },
+  {
+    "id": 19,
+    "title": "Chanda's Secrets",
+    "author": "Allan Stratton",
+    "pageCount": 256,
+    "publishedDate": "2006-10-23"
+  },
+  {
+    "id": 20,
+    "title": "Lizzie Bright and the Buckminster Boy",
+    "author": "Gary D. Schmidt",
+    "pageCount": 219,
+    "publishedDate": "2004-05-24"
+  },
+  {
+    "id": 21,
+    "title": "Black Juice",
+    "author": "Margo Lanagan",
+    "pageCount": 228,
+    "publishedDate": "2004-10-23"
+  },
+  {
+    "id": 22,
+    "title": "I Am the Messenger",
+    "author": "Markus Zusak",
+    "pageCount": 368,
+    "publishedDate": "2002-10-23"
+  },
+  {
+    "id": 23,
+    "title": "John Lennon",
+    "author": "Elizabeth Partridge",
+    "pageCount": 232,
+    "publishedDate": "2005-10-23"
+  },
+  {
+    "id": 24,
+    "title": "A Wreath for Emmett Till",
+    "author": "Marilyn Nelson",
+    "pageCount": 48,
+    "publishedDate": "2005-01-01"
+  },
+  {
+    "id": 25,
+    "title": "The Astonishing Life of Octavian Nothing, Traitor to the Nation, Volume I",
+    "author": "M.T. Anderson",
+    "pageCount": 384,
+    "publishedDate": "2006-10-23"
+  },
+  {
+    "id": 26,
+    "title": "An Abundance of Katherines",
+    "author": "John Green",
+    "pageCount": 272,
+    "publishedDate": "2006-09-21"
+  },
+  {
+    "id": 27,
+    "title": "Surrender",
+    "author": "Sonya Hartnett",
+    "pageCount": 256,
+    "publishedDate": "2005-01-01"
+  },
+  {
+    "id": 28,
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "pageCount": 552,
+    "publishedDate": "2005-10-23"
+  },
+  {
+    "id": 29,
+    "title": "Dreamquake",
+    "author": "Elizabeth Knox",
+    "pageCount": 449,
+    "publishedDate": "2007-02-20"
+  },
+  {
+    "id": 30,
+    "title": "One Whole and Perfect Day",
+    "author": "Judith Clarke",
+    "pageCount": 248,
+    "publishedDate": "2006-08-01"
+  },
+  {
+    "id": 31,
+    "title": "Repossessed",
+    "author": "A. M. Jenkins",
+    "pageCount": 240,
+    "publishedDate": "2007-05-29"
+  },
+  {
+    "id": 32,
+    "title": "Your Own, Sylvia",
+    "author": "Stephanie Hemphill",
+    "pageCount": 272,
+    "publishedDate": "2007-03-13"
+  },
+  {
+    "id": 33,
+    "title": "The Astonishing Life of Octavian Nothing, Traitor to the Nation, Volume II",
+    "author": "M.T. Anderson",
+    "pageCount": 592,
+    "publishedDate": "2008-10-14"
+  },
+  {
+    "id": 34,
+    "title": "The Disreputable History of Frankie Landau-Banks",
+    "author": "E. Lockhart",
+    "pageCount": 352,
+    "publishedDate": "2008-03-25"
+  },
+  {
+    "id": 35,
+    "title": "Nation",
+    "author": "Terry Pratchett",
+    "pageCount": 384,
+    "publishedDate": "2008-09-23"
+  },
+  {
+    "id": 36,
+    "title": "Tender Morsels",
+    "author": "Margo Lanagan",
+    "pageCount": 312,
+    "publishedDate": "2007-10-14"
+  },
+  {
+    "id": 37,
+    "title": "Charles and Emma",
+    "author": "Deborah Heiligman",
+    "pageCount": 272,
+    "publishedDate": "2008-12-23"
+  },
+  {
+    "id": 38,
+    "title": "The Monstrumologist: The Terror Beneath",
+    "author": "Rick Yancey",
+    "pageCount": 448,
+    "publishedDate": "2009-09-22"
+  },
+  {
+    "id": 39,
+    "title": "Punkzilla",
+    "author": "Adam Rapp",
+    "pageCount": 256,
+    "publishedDate": "2009-05-12"
+  },
+  {
+    "id": 40,
+    "title": "Tales of the Madman Underground",
+    "author": "John Barnes",
+    "pageCount": 544,
+    "publishedDate": "2009-06-25"
+  },
+  {
+    "id": 41,
+    "title": "Stolen",
+    "author": "Lucy Christopher",
+    "pageCount": 304,
+    "publishedDate": "2009-05-04"
+  },
+  {
+    "id": 42,
+    "title": "Please Ignore Vera Dietz",
+    "author": "A.S. King",
+    "pageCount": 336,
+    "publishedDate": "2010-10-12"
+  },
+  {
+    "id": 43,
+    "title": "Revolver",
+    "author": "Marcus Sedgwick",
+    "pageCount": 224,
+    "publishedDate": "2009-07-16"
+  },
+  {
+    "id": 44,
+    "title": "Nothing",
+    "author": "Janne Teller",
+    "pageCount": 240,
+    "publishedDate": "2000-12-23"
+  },
+  {
+    "id": 45,
+    "title": "Why We Broke Up",
+    "author": "Daniel Handler",
+    "pageCount": 368,
+    "publishedDate": "2011-12-27"
+  },
+  {
+    "id": 46,
+    "title": "The Returning",
+    "author": "Christine Hinwood",
+    "pageCount": 302,
+    "publishedDate": "2009-06-01"
+  },
+  {
+    "id": 47,
+    "title": "Jasper Jones",
+    "author": "Craig Silvey",
+    "pageCount": 320,
+    "publishedDate": "2009-03-31"
+  },
+  {
+    "id": 48,
+    "title": "The Scorpio Races",
+    "author": "Maggie Stiefvater",
+    "pageCount": 435,
+    "publishedDate": "2011-10-18"
+  },
+  {
+    "id": 49,
+    "title": "Aristotle and Dante Discover the Secrets of the Universe",
+    "author": "Benjamin Alire Saenz",
+    "pageCount": 368,
+    "publishedDate": "2012-02-21"
+  },
+  {
+    "id": 50,
+    "title": "Code Name Verity",
+    "author": "Elizabeth E. Wein",
+    "pageCount": 304,
+    "publishedDate": "2012-02-06"
+  },
+  {
+    "id": 51,
+    "title": "Dodger",
+    "author": "Terry Pratchett",
+    "pageCount": 368,
+    "publishedDate": "2012-09-13"
+  },
+  {
+    "id": 52,
+    "title": "The White Bicycle",
+    "author": "Beverley Brenna",
+    "pageCount": 198,
+    "publishedDate": "2012-10-23"
+  },
+  {
+    "id": 53,
+    "title": "Eleanor",
+    "author": "Jason Gurley",
+    "pageCount": 416,
+    "publishedDate": "2014-06-27"
+  },
+  {
+    "id": 54,
+    "title": "The Kingdom of Little Wounds",
+    "author": "Susann Cokal",
+    "pageCount": 554,
+    "publishedDate": "2013-10-23"
+  },
+  {
+    "id": 55,
+    "title": "Maggot Moon",
+    "author": "Sally Gardner",
+    "pageCount": 288,
+    "publishedDate": "2012-01-01"
+  },
+  {
+    "id": 56,
+    "title": "Navigating Early",
+    "author": "Clare Vanderpool",
+    "pageCount": 336,
+    "publishedDate": "2013-01-08"
+  },
+  {
+    "id": 57,
+    "title": "And We Stay",
+    "author": "Jenny Hubbard",
+    "pageCount": 240,
+    "publishedDate": "2014-01-10"
+  },
+  {
+    "id": 58,
+    "title": "The Carnival at Bray",
+    "author": "Jessie Ann Foley",
+    "pageCount": 235,
+    "publishedDate": "2014-01-01"
+  },
+  {
+    "id": 59,
+    "title": "Grasshopper Jungle",
+    "author": "Andrew Smith",
+    "pageCount": 432,
+    "publishedDate": "2014-02-11"
+  },
+  {
+    "id": 60,
+    "title": "This One Summer",
+    "author": "Mariko Tamaki",
+    "pageCount": 320,
+    "publishedDate": "2014-05-06"
+  },
+  {
+    "id": 61,
+    "title": "The Ghosts of Heaven",
+    "author": "Marcus Sedgwick",
+    "pageCount": 368,
+    "publishedDate": "2015-01-06"
+  },
+  {
+    "id": 62,
+    "title": "Out of Darkness",
+    "author": "Ashley Hope Pérez",
+    "pageCount": 402,
+    "publishedDate": "2015-10-23"
+  },
+  {
+    "id": 63,
+    "title": "Asking For It",
+    "author": "Louise O'Neill",
+    "pageCount": 304,
+    "publishedDate": "2015-09-03"
+  },
+  {
+    "id": 64,
+    "title": "The Passion of Dolssa",
+    "author": "Julie Berry",
+    "pageCount": 512,
+    "publishedDate": "2016-04-12"
+  },
+  {
+    "id": 65,
+    "title": "Scythe",
+    "author": "Neal Shusterman",
+    "pageCount": 433,
+    "publishedDate": "2016-11-22"
+  },
+  {
+    "id": 66,
+    "title": "The Sun Is Also a Star",
+    "author": "Nicola Yoon",
+    "pageCount": 384,
+    "publishedDate": "2016-11-01"
+  },
+  {
+    "id": 67,
+    "title": "Long Way Down",
+    "author": "Jason Reynolds",
+    "pageCount": 320,
+    "publishedDate": "2017-10-24"
+  },
+  {
+    "id": 68,
+    "title": "The Hate U Give",
+    "author": "Angie Thomas",
+    "pageCount": 464,
+    "publishedDate": "2017-02-28"
+  },
+  {
+    "id": 69,
+    "title": "Strange the Dreamer",
+    "author": "Laini Taylor",
+    "pageCount": 544,
+    "publishedDate": "2017-03-28"
+  },
+  {
+    "id": 70,
+    "title": "Vincent and Theo",
+    "author": "Deborah Heiligman",
+    "pageCount": 256,
+    "publishedDate": "2017-04-18"
+  }
+]
