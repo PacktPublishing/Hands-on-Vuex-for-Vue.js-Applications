@@ -33,11 +33,11 @@
       <div class="column is-1">
         {{ new Date(book.publishedDate).getFullYear() }}
       </div>
-      <div class="column">
+      <div class="column is-one-third">
         <b-field>
           <b-taginput
             placeholder="Add book to list"
-            :value="book.lists"
+            :value="(book.lists || []).slice()"
             @typing="listSearch = $event"
             autocomplete
             :data="filteredLists"
@@ -57,6 +57,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      listSearch: ""
+    };
+  },
+
   props: {
     books: {
       type: Array,
