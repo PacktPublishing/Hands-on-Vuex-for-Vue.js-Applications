@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Lists from "./views/Lists.vue";
-import List from "./views/List.vue";
+import ListDetails from "./views/ListDetails.vue";
 import Books from "./views/Books.vue";
 import AddUser from "./views/AddUser.vue";
 import Profile from "./views/Profile.vue";
@@ -15,7 +15,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     { path: "/lists", component: Lists },
-    { path: "/list/:id", component: List },
+    { path: "/list/:id", component: ListDetails },
     { path: "/books", component: Books },
     { path: "/adduser", component: AddUser },
     { path: "/profile", component: Profile },
