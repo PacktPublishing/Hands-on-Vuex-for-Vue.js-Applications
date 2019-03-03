@@ -6,6 +6,7 @@ import lists from "./data/lists.json";
 
 Vue.use(Vuex);
 
+const TEMP_USER_ID = -1;
 let nextId = 200;
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
@@ -13,32 +14,32 @@ export default new Vuex.Store({
   state: {
     books, // Array of { id, title, author, pageCount, publishedDate }
     users: [], // Array of { id, name, bio, lists (array of { id, name, description, books }) }
-    currentUser: null
+    currentUser: {
+      id: TEMP_USER_ID,
+      lists
+    }
   },
 
   mutations: {
     CREATE_LIST(state, newList) {
       newList.id = nextId++;
-      state.lists.push(newList);
+      state.currentUser.lists.push(newList);
     },
 
     ADD_BOOK_TO_LIST(state, { book, list }) {
-      if (!book.lists) {
-        Vue.set(book, "lists", []);
-      }
-
-      book.lists.push(list);
+      list.push(book);
     },
 
     REMOVE_BOOK_FROM_LIST(state, { book, list }) {
-      const index = book.lists.indexOf(list);
-      book.lists.splice(index, 1);
+      const index = list.indexOf(book);
+      list.splice(index, 1);
     },
 
     ADD_USER(state, newUser) {
       newUser = Object.assign(newUser, {
         id: nextId++,
-        lists,
+        lists:
+          state.currentUser.id === TEMP_USER_ID ? state.currentUser.lists : [], // Lets users create a user after adding some lists
         dateAdded: new Date()
       });
       state.users.push(newUser);
