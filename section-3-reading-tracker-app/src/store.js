@@ -11,9 +11,9 @@ export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
-    users: [], // Array of { id, name, bio, lists }
-
-    books // Array of { id, title, author, pageCount, publishedDate, lists }
+    users: [], // Array of { id, name, bio, lists (array of { id, name, description, books }) }
+    currentUser: null,
+    books // Array of { id, title, author, pageCount, publishedDate }
   },
 
   mutations: {
@@ -36,24 +36,25 @@ export default new Vuex.Store({
     },
 
     ADD_USER(state, newUser) {
-      state.users.push(
-        Object.assign(newUser, {
-          id: nextId++,
-          lists: [],
-          dateAdded: new Date()
-        })
-      );
+      newUser = Object.assign(newUser, {
+        id: nextId++,
+        lists,
+        dateAdded: new Date()
+      });
+      state.users.push(newUser);
+      state.currentUser = newUser;
     }
   },
 
   getters: {
     listById(state) {
-      return id => state.lists.find(list => list.id === parseInt(id));
+      return id =>
+        state.currentUser.lists.find(list => list.id === parseInt(id));
     },
 
-    booksForList(state) {
-      return list =>
-        state.books.filter(book => book.lists && book.lists.indexOf(list) >= 0);
+    listsForBook(state) {
+      return book =>
+        state.currentUser.lists.filter(list => list.indexOf(book) >= 0);
     }
   }
 });

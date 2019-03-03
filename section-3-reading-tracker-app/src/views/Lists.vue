@@ -7,7 +7,11 @@
       <div class="column is-three-quarters"><strong>Description</strong></div>
     </div>
 
-    <div class="columns" v-for="list in $store.state.lists" :key="list.id">
+    <div
+      class="columns"
+      v-for="list in $store.state.currentUser.lists"
+      :key="list.id"
+    >
       <div class="column">
         <router-link :to="{ path: `list/${list.id}` }">
           {{ list.name }}
