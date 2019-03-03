@@ -11,9 +11,9 @@ export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
-    books, // Array of { id, title, author, pageCount, publishedDate, lists }
+    users: [], // Array of { id, name, bio, lists }
 
-    lists // Array of { id, name, description }
+    books // Array of { id, title, author, pageCount, publishedDate, lists }
   },
 
   mutations: {
@@ -33,6 +33,16 @@ export default new Vuex.Store({
     REMOVE_BOOK_FROM_LIST(state, { book, list }) {
       const index = book.lists.indexOf(list);
       book.lists.splice(index, 1);
+    },
+
+    ADD_USER(state, newUser) {
+      state.users.push(
+        Object.assign(newUser, {
+          id: nextId++,
+          lists: [],
+          dateAdded: new Date()
+        })
+      );
     }
   },
 
