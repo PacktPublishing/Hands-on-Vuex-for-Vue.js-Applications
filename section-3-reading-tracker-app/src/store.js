@@ -16,23 +16,24 @@ export default new Vuex.Store({
     users: [], // Array of { id, name, bio, lists (array of { id, name, description, books }) }
     currentUser: {
       id: TEMP_USER_ID,
-      lists
+      lists: lists.map(list => Object.assign(list, { books: [] }))
     }
   },
 
   mutations: {
     CREATE_LIST(state, newList) {
       newList.id = nextId++;
+      newList.books = [];
       state.currentUser.lists.push(newList);
     },
 
     ADD_BOOK_TO_LIST(state, { book, list }) {
-      list.push(book);
+      list.books.push(book);
     },
 
     REMOVE_BOOK_FROM_LIST(state, { book, list }) {
-      const index = list.indexOf(book);
-      list.splice(index, 1);
+      const index = list.books.indexOf(book);
+      list.books.splice(index, 1);
     },
 
     ADD_USER(state, newUser) {
