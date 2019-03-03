@@ -1,7 +1,20 @@
 <template>
   <div class="wrapper">
     <nav class="navbar">
-      <div class="navbar-menu">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          @click="burgerOpen = !burgerOpen"
+          class="navbar-burger burger"
+          :class="{ 'is-active': burgerOpen }"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" :class="{ 'is-active': burgerOpen }">
         <div class="navbar-start">
           <router-link class="navbar-item" to="/books" active-class="is-active">
             Books
@@ -45,6 +58,16 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      burgerOpen: false
+    };
+  }
+};
+</script>
 
 <style scoped>
 .wrapper {
