@@ -72,7 +72,7 @@ export default {
 
   computed: {
     filteredLists() {
-      return this.$store.state.lists.filter(
+      return this.$store.state.currentUser.lists.filter(
         list =>
           list.name.toLowerCase().indexOf(this.listSearch.toLowerCase()) >= 0
       );
