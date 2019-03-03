@@ -54,7 +54,7 @@ export default new Vuex.Store({
 
     listsForBook(state) {
       return book =>
-        state.currentUser.lists.filter(list => list.indexOf(book) >= 0);
+        state.currentUser.lists.filter(list => list.books.indexOf(book) >= 0);
     }
   }
 });
