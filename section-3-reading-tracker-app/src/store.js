@@ -11,9 +11,9 @@ export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
+    books, // Array of { id, title, author, pageCount, publishedDate }
     users: [], // Array of { id, name, bio, lists (array of { id, name, description, books }) }
-    currentUser: null,
-    books // Array of { id, title, author, pageCount, publishedDate }
+    currentUser: null
   },
 
   mutations: {
