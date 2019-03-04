@@ -1,14 +1,32 @@
 <template>
   <div>
     <h1 class="title">Login</h1>
-    <b-select :value="$store.state.currentUser.id">
-      <option
-        v-for="user in $store.state.users"
-        :value="user.id"
-        :key="user.id"
+    <b-field grouped>
+      <b-select v-model="selectedUser">
+        <option
+          v-for="user in $store.state.users"
+          :value="user.id"
+          :key="user.id"
+        >
+          {{ user.name }}
+        </option>
+      </b-select>
+      <button
+        class="button is-primary"
+        @click="$store.commit('SET_CURRENT_USER', { id: selectedUser })"
       >
-        {{ user.name }}
-      </option>
-    </b-select>
+        Login
+      </button>
+    </b-field>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectedUser: this.$store.state.currentUser.id
+    };
+  }
+};
+</script>
