@@ -41,8 +41,8 @@ export default new Vuex.Store({
       state.users.push(newUser);
     },
 
-    SET_CURRENT_USER(state, user) {
-      state.currentUser = user;
+    SET_CURRENT_USER(state, { id }) {
+      state.currentUser = state.users.find(user => user.id === id);
     }
   },
 
