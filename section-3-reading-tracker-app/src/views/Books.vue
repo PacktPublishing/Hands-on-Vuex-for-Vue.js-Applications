@@ -23,7 +23,8 @@ export default {
   data() {
     return {
       itemsPerPage: 10,
-      currentPage: 1
+      currentPage: 1,
+      listSearch: ""
     };
   },
 
