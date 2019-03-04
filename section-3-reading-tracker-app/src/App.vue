@@ -51,7 +51,7 @@
                 :to="{ path: '/login' }"
                 active-class="is-active"
               >
-                Login
+                {{ $store.getters.isLoggedIn ? "Change User" : "Login" }}
               </router-link>
             </div>
           </div>
