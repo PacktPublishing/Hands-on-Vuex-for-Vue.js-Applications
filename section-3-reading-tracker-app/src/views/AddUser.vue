@@ -33,7 +33,7 @@ export default {
 
   methods: {
     addNewUser() {
-      this.$store.commit("ADD_USER", { name: this.name, bio: this.bio });
+      this.$store.dispatch("addUser", { name: this.name, bio: this.bio });
       this.name = "";
       this.bio = "";
     }

@@ -37,14 +37,24 @@ export default new Vuex.Store({
     },
 
     ADD_USER(state, newUser) {
+      state.users.push(newUser);
+    },
+
+    SET_CURRENT_USER(state, user) {
+      state.currentUser = user;
+    }
+  },
+
+  actions: {
+    addUser({ state, getters, commit }, newUser) {
       newUser = Object.assign(newUser, {
         id: nextId++,
-        lists:
-          state.currentUser.id === TEMP_USER_ID ? state.currentUser.lists : [], // Lets users create a user after adding some lists
+        lists: getters.isLoggedIn ? [] : state.currentUser.lists, // If using temp user, transfer lists over
         dateAdded: new Date()
       });
-      state.users.push(newUser);
-      state.currentUser = newUser;
+
+      commit("ADD_USER", newUser);
+      commit("SET_CURRENT_USER", newUser);
     }
   },
 
@@ -57,6 +67,10 @@ export default new Vuex.Store({
     listsForBook(state) {
       return book =>
         state.currentUser.lists.filter(list => list.books.indexOf(book) >= 0);
+    },
+
+    isLoggedIn(state) {
+      return state.currentUser.id !== TEMP_USER_ID;
     }
   }
 });
