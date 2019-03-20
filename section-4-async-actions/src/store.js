@@ -28,23 +28,14 @@ export default new Vuex.Store({
   },
 
   actions: {
-    updateUserName({ commit }) {
-      asyncTimeout(faker.name.findName()).then(name =>
-        commit("SET_CURRENT_USER_NAME", name)
-      );
-    },
-
-    updateUserPhoneNumber({ commit }) {
-      asyncTimeout(faker.phone.phoneNumber()).then(number =>
-        commit("SET_CURRENT_USER_PHONE_NUMBER", number)
-      );
-    },
-
-    getUser({ dispatch }) {
+    getUser({ commit }) {
       return Promise.all([
-        dispatch("updateUserName"),
-        dispatch("updateUserPhoneNumber")
-      ]);
+        asyncTimeout(faker.name.findName()),
+        asyncTimeout(faker.phone.phoneNumber())
+      ]).then(([name, number]) => {
+        commit("SET_CURRENT_USER_NAME", name);
+        commit("SET_CURRENT_USER_PHONE_NUMBER", number);
+      });
     }
   }
 });
