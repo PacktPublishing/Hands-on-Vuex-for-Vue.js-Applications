@@ -15,9 +15,26 @@ body {
 
 #app {
   text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+button {
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+}
+
+button:active {
+  background: black;
+  color: white;
 }
 
 #app p {
