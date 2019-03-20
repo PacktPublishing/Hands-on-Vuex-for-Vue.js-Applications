@@ -13,12 +13,17 @@ export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
-    currentUserName: ""
+    currentUserName: "",
+    currentUserPhoneNumber: ""
   },
 
   mutations: {
     SET_CURRENT_USER_NAME(state, newUserName) {
       state.currentUserName = newUserName;
+    },
+
+    SET_CURRENT_USER_PHONE_NUMBER(state, newUserPhoneNumber) {
+      state.currentUserPhoneNumber = newUserPhoneNumber;
     }
   },
 
@@ -26,6 +31,12 @@ export default new Vuex.Store({
     updateUserName({ commit }) {
       asyncTimeout(faker.name.findName()).then(name =>
         commit("SET_CURRENT_USER_NAME", name)
+      );
+    },
+
+    updateUserPhoneNumber({ commit }) {
+      asyncTimeout(faker.phone.phoneNumber()).then(number =>
+        commit("SET_CURRENT_USER_PHONE_NUMBER", number)
       );
     }
   }
