@@ -1,5 +1,10 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <p>{{ $store.state.currentUserName }}</p>
+    <button @click="$store.dispatch('updateUserName')">
+      Get Name
+    </button>
+  </div>
 </template>
 
 <script>
