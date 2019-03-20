@@ -3,11 +3,8 @@
     <p>Name: {{ $store.state.currentUserName }}</p>
     <p>Number: {{ $store.state.currentUserPhoneNumber }}</p>
 
-    <button @click="$store.dispatch('updateUserName')">
-      Get Name
-    </button>
-    <button @click="$store.dispatch('updateUserPhoneNumber')">
-      Get Number
+    <button @click="$store.dispatch('getUser')">
+      Get User
     </button>
   </div>
 </template>

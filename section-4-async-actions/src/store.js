@@ -38,6 +38,13 @@ export default new Vuex.Store({
       asyncTimeout(faker.phone.phoneNumber()).then(number =>
         commit("SET_CURRENT_USER_PHONE_NUMBER", number)
       );
+    },
+
+    getUser({ dispatch }) {
+      return Promise.all([
+        dispatch("updateUserName"),
+        dispatch("updateUserPhoneNumber")
+      ]);
     }
   }
 });
