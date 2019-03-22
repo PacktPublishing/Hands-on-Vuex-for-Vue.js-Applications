@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "concurrently --kill-others --raw \"npm:serve\" \"npm:api\" ",
     "serve": "vue-cli-service serve",
+    "api": "node ./backend/server.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
