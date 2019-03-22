@@ -1,6 +1,6 @@
 const jsonServer = require("json-server");
 const auth = require("json-server-auth");
-const { rewriter } = require("json-server-auth/guards");
+const { rewriter } = require("json-server-auth/dist/guards");
 
 const books = require("./books.json");
 
