@@ -1,5 +1,6 @@
 const jsonServer = require("json-server");
 const auth = require("json-server-auth");
+const { rewriter } = require("json-server-auth/guards");
 
 const books = require("./books.json");
 
@@ -9,11 +10,16 @@ const router = jsonServer.router({
   lists: [], // Array of  { id, name, description, bookIds (array) }
   books
 });
-const middlewares = jsonServer.defaults();
+const permissions = rewriter({
+  users: 600, // Only user can modify themself
+  lists: 600, // Only owner of a list can access it
+  books: 444 // Anyone can read, nobody can write
+});
 
 server.db = router.db;
 
-server.use(middlewares);
+server.use(jsonServer.defaults());
+server.use(permissions);
 server.use(auth);
 server.use(router);
 server.listen(3001);
