@@ -10,7 +10,6 @@ export default new Vuex.Store({
 
   state: {
     books: [], // Array of { id, title, author, pageCount, publishedDate }
-    users: [], // Array of { id, name, bio, lists (array of { id, name, description, books }) }
     currentUser: {
       id: TEMP_USER_ID,
       lists: []
