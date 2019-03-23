@@ -12,6 +12,10 @@ export function login(credentials) {
   return axios.post("/api/login", credentials);
 }
 
+export function getUser(userId) {
+  return axios.get(`/api/users/${userId}`);
+}
+
 export function setToken(newToken) {
   axios.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
 }
