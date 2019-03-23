@@ -1,15 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import * as api from "./api.js";
 
 Vue.use(Vuex);
 
 const TEMP_USER_ID = -1;
-let nextId = 200;
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
     books: [], // Array of { id, title, author, pageCount, publishedDate }
+    token: "",
     currentUser: {
       id: TEMP_USER_ID,
       lists: []
@@ -17,9 +18,11 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    SET_BOOKS(state, books) {
+      state.books = books;
+    },
+
     CREATE_LIST(state, newList) {
-      newList.id = nextId++;
-      newList.books = [];
       state.currentUser.lists.push(newList);
     },
 
@@ -32,26 +35,33 @@ export default new Vuex.Store({
       list.books.splice(index, 1);
     },
 
-    ADD_USER(state, newUser) {
-      state.users.push(newUser);
+    SET_TOKEN(state, newToken) {
+      state.token = newToken;
     },
 
-    SET_CURRENT_USER(state, { id }) {
-      state.currentUser = state.users.find(user => user.id === id);
+    SET_CURRENT_USER(state, newCurrentUser) {
+      state.currentUser = newCurrentUser;
     }
   },
 
   actions: {
-    addUser({ state, getters, commit }, newUser) {
+    async registerUser({ commit }, newUser) {
       newUser = Object.assign(newUser, {
-        id: nextId++,
-        lists: getters.isLoggedIn ? [] : state.currentUser.lists, // If using temp user, transfer lists over
+        listIds: [],
         dateAdded: new Date()
       });
 
-      commit("ADD_USER", newUser);
+      const { accessToken } = api.registerUser(newUser);
+      commit("SET_TOKEN", accessToken);
+
+      newUser.id = api.parseJWT(accessToken).sub;
+      delete newUser.listIds;
+      newUser.lists = [];
+
       commit("SET_CURRENT_USER", newUser);
-    }
+    },
+
+    async login({ commit }, credentials) {}
   },
 
   getters: {
