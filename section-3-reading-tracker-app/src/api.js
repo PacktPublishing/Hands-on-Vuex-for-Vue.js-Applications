@@ -33,8 +33,8 @@ export function createList(newList) {
   return axios.post("/api/lists", newList).then(extractData);
 }
 
-export function getLists() {
-  return axios.get(`/api/lists`).then(extractData);
+export function getLists(userId) {
+  return axios.get(`/api/lists?userId=${userId}`).then(extractData);
 }
 
 export function updateList(listId, update) {
