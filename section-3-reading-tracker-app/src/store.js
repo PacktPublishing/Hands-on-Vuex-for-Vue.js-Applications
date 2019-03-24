@@ -50,6 +50,11 @@ export default new Vuex.Store({
   },
 
   actions: {
+    async loadBooks({ commit }) {
+      const books = await api.getBooks();
+      commit("SET_BOOKS", books);
+    },
+
     async registerUser({ commit }, newUser) {
       const { accessToken } = await api.registerUser(newUser);
       commit("SET_TOKEN", accessToken);
@@ -97,6 +102,31 @@ export default new Vuex.Store({
           const book = state.books.find(maybeBook => maybeBook.id === bookId);
           commit("ADD_BOOK_TO_LIST", { list, book });
         });
+      });
+    },
+
+    async createList({ commit, state }, newList) {
+      newList.bookIds = [];
+      newList.userId = state.currentUser.id;
+
+      const { id } = await api.createList(newList);
+      newList.books = [];
+      newList.id = id;
+
+      commit("CREATE_LIST", newList);
+    },
+
+    async addBookToList({ commit }, { book, list }) {
+      commit("ADD_BOOK_TO_LIST", { book, list });
+      await api.updateList(list.id, {
+        bookIds: list.books.map(book => book.id)
+      });
+    },
+
+    async removeBookFromList({ commit }, { book, list }) {
+      commit("REMOVE_BOOK_FROM_LIST", { book, list });
+      await api.updateList(list.id, {
+        bookIds: list.books.map(book => book.id)
       });
     }
   },
