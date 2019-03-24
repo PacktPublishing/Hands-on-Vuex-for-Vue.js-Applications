@@ -15,7 +15,7 @@
       </div>
 
       <div class="navbar-menu" :class="{ 'is-active': burgerOpen }">
-        <div class="navbar-start">
+        <div v-show="$store.state.currentUser" class="navbar-start">
           <router-link class="navbar-item" to="/books" active-class="is-active">
             Books
           </router-link>
@@ -68,6 +68,7 @@ export default {
   },
 
   created() {
+    this.$router.replace("login");
     this.$store.dispatch("loadBooks");
   }
 };

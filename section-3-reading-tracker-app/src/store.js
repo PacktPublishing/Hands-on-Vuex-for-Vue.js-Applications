@@ -4,17 +4,13 @@ import * as api from "./api.js";
 
 Vue.use(Vuex);
 
-const TEMP_USER_ID = -1;
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== "production",
 
   state: {
     books: [], // Array of { id, title, author, pageCount, publishedDate }
     token: "",
-    currentUser: {
-      id: TEMP_USER_ID,
-      lists: []
-    }
+    currentUser: null
   },
 
   mutations: {
@@ -140,10 +136,6 @@ export default new Vuex.Store({
     listsForBook(state) {
       return book =>
         state.currentUser.lists.filter(list => list.books.indexOf(book) >= 0);
-    },
-
-    isLoggedIn(state) {
-      return state.currentUser.id !== TEMP_USER_ID;
     }
   }
 });
