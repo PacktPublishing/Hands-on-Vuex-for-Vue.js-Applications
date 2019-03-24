@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import { types as actions } from "@/store/actions";
+
 export default {
   data() {
     return {
@@ -81,11 +83,11 @@ export default {
 
   methods: {
     addToList(book, list) {
-      this.$store.dispatch("addBookToList", { book, list });
+      this.$store.dispatch(actions.ADD_BOOK_TO_LIST, { book, list });
     },
 
     removeFromList(book, list) {
-      this.$store.dispatch("removeBookFromList", { book, list });
+      this.$store.dispatch(actions.REMOVE_BOOK_FROM_LIST, { book, list });
     }
   }
 };

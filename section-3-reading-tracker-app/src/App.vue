@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import { types as actions } from "@/store/actions";
 export default {
   data() {
     return {
@@ -76,7 +77,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("loadBooks");
+    this.$store.dispatch(actions.LOAD_BOOKS);
 
     if (this.$route.fullPath !== "/adduser") {
       this.$router.replace("login");

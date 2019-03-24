@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { types as actions } from "@/store/actions";
+
 export default {
   data() {
     return {
@@ -41,7 +43,7 @@ export default {
 
   methods: {
     async addNewUser() {
-      await this.$store.dispatch("registerUser", {
+      await this.$store.dispatch(actions.REGISTER_USER, {
         name: this.name,
         bio: this.bio,
         email: this.email,
