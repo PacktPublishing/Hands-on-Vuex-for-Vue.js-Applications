@@ -17,7 +17,7 @@ export function login(credentials) {
 }
 
 export function getUser(userId) {
-  return axios.get(`/api/users/${userId}`);
+  return axios.get(`/api/users/${userId}`).then(extractData);
 }
 
 export function setToken(newToken) {
