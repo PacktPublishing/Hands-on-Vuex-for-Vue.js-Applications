@@ -72,10 +72,10 @@ export default new Vuex.Store({
       await dispatch("getUserLists");
     },
 
-    async getUserLists({ commit, dispatch }) {
+    async getUserLists({ commit, dispatch, state }) {
       let lists;
       try {
-        lists = await api.getLists();
+        lists = await api.getLists(state.currentUser.id);
       } catch (e) {
         // no lists on server
         if (e.response.status === 403) {
