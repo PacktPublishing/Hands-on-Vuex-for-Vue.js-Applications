@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { types as actions } from "@/store/actions";
+
 export default {
   data() {
     return { name: "", description: "" };
@@ -26,7 +28,7 @@ export default {
 
   methods: {
     submitNewList() {
-      this.$store.dispatch("createList", {
+      this.$store.dispatch(actions.CREATE_LIST, {
         name: this.name,
         description: this.description
       });
