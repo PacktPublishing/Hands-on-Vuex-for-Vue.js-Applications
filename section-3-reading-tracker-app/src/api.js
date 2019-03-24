@@ -1,15 +1,19 @@
 import axios from "axios";
 
+function extractData(response) {
+  return response.data;
+}
+
 export function getBooks() {
-  return axios.get("/api/books");
+  return axios.get("/api/books").then(extractData);
 }
 
 export function registerUser(newUser) {
-  return axios.post(`/api/register`, newUser);
+  return axios.post(`/api/register`, newUser).then(extractData);
 }
 
 export function login(credentials) {
-  return axios.post("/api/login", credentials);
+  return axios.post("/api/login", credentials).then(extractData);
 }
 
 export function getUser(userId) {
@@ -26,9 +30,9 @@ export function parseJWT(token) {
 }
 
 export function createList(newList) {
-  return axios.post("/api/lists", newList);
+  return axios.post("/api/lists", newList).then(extractData);
 }
 
 export function getLists() {
-  return axios.get(`/api/lists`);
+  return axios.get(`/api/lists`).then(extractData);
 }
