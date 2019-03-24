@@ -12,7 +12,7 @@
         </option>
       </b-select>
       <button
-        class="button is-primary"
+        class="button is-info"
         @click="$store.commit('SET_CURRENT_USER', { id: selectedUser })"
       >
         Login

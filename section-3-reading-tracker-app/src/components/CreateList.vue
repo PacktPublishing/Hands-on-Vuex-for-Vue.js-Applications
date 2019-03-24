@@ -11,7 +11,7 @@
         v-model="description"
         expanded
       ></b-input>
-      <button class="button is-primary" @click="submitNewList">
+      <button class="button is-info" @click="submitNewList">
         Add
       </button>
     </b-field>

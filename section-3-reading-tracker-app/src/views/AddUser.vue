@@ -13,7 +13,7 @@
       ></b-input>
     </b-field>
     <button
-      class="button is-primary"
+      class="button is-info"
       @click="addNewUser"
       :disabled="!name.length || !bio.length"
     >

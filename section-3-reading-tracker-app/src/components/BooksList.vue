@@ -46,7 +46,7 @@
             @remove="removeFromList(book, $event)"
             :open-on-focus="true"
             :keep-first="true"
-            type="is-primary"
+            type="is-info"
           >
           </b-taginput>
         </b-field>
