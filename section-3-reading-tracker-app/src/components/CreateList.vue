@@ -26,7 +26,7 @@ export default {
 
   methods: {
     submitNewList() {
-      this.$store.commit("CREATE_LIST", {
+      this.$store.dispatch("createList", {
         name: this.name,
         description: this.description
       });

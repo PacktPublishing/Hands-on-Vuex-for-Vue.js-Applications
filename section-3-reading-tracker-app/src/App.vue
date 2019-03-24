@@ -73,6 +73,10 @@ export default {
     return {
       burgerOpen: false
     };
+  },
+
+  created() {
+    this.$store.dispatch("loadBooks");
   }
 };
 </script>
