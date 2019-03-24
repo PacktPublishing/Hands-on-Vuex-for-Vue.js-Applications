@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="title">Add User</h1>
+
     <b-field label="Name">
       <b-input placeholder="Jane Austen" v-model="name"></b-input>
     </b-field>
@@ -12,11 +13,16 @@
         expanded
       ></b-input>
     </b-field>
-    <button
-      class="button is-info"
-      @click="addNewUser"
-      :disabled="!name.length || !bio.length"
-    >
+
+    <hr />
+
+    <b-field label="Email Address">
+      <b-input type="email" v-model="email"></b-input>
+    </b-field>
+    <b-field label="Password">
+      <b-input type="password" v-model="password"></b-input>
+    </b-field>
+    <button class="button is-info" @click="addNewUser" :disabled="!valid">
       Add
     </button>
   </div>
@@ -27,15 +33,32 @@ export default {
   data() {
     return {
       name: "",
-      bio: ""
+      bio: "",
+      email: "",
+      password: ""
     };
   },
 
   methods: {
-    addNewUser() {
-      this.$store.dispatch("addUser", { name: this.name, bio: this.bio });
-      this.name = "";
-      this.bio = "";
+    async addNewUser() {
+      await this.$store.dispatch("registerUser", {
+        name: this.name,
+        bio: this.bio,
+        email: this.email,
+        password: this.password
+      });
+      this.$router.push("books");
+    }
+  },
+
+  computed: {
+    valid() {
+      return (
+        this.name.length &&
+        this.bio.length &&
+        this.email.length &&
+        this.password.length
+      );
     }
   }
 };

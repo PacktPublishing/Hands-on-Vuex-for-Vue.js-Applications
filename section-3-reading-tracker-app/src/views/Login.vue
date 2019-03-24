@@ -1,23 +1,15 @@
 <template>
   <div>
     <h1 class="title">Login</h1>
-    <b-field grouped>
-      <b-select v-model="selectedUser">
-        <option
-          v-for="user in $store.state.users"
-          :value="user.id"
-          :key="user.id"
-        >
-          {{ user.name }}
-        </option>
-      </b-select>
-      <button
-        class="button is-info"
-        @click="$store.commit('SET_CURRENT_USER', { id: selectedUser })"
-      >
-        Login
-      </button>
+    <b-field label="Email Address">
+      <b-input type="email" v-model="credentials.email"></b-input>
     </b-field>
+    <b-field label="Password">
+      <b-input type="password" v-model="credentials.password"></b-input>
+    </b-field>
+    <button class="button is-info" @click="login">
+      Login
+    </button>
   </div>
 </template>
 
@@ -25,8 +17,18 @@
 export default {
   data() {
     return {
-      selectedUser: this.$store.state.currentUser.id
+      credentials: {
+        email: "",
+        password: ""
+      }
     };
+  },
+
+  methods: {
+    async login() {
+      await this.$store.dispatch("login", this.credentials);
+      this.$router.push("books");
+    }
   }
 };
 </script>
