@@ -22,6 +22,10 @@ export default new Vuex.Store({
       state.books = books;
     },
 
+    SET_LISTS(state, lists) {
+      state.currentUser.lists = lists;
+    },
+
     CREATE_LIST(state, newList) {
       state.currentUser.lists.push(newList);
     },
@@ -37,6 +41,7 @@ export default new Vuex.Store({
 
     SET_TOKEN(state, newToken) {
       state.token = newToken;
+      api.setToken(newToken);
     },
 
     SET_CURRENT_USER(state, newCurrentUser) {
@@ -46,22 +51,54 @@ export default new Vuex.Store({
 
   actions: {
     async registerUser({ commit }, newUser) {
-      newUser = Object.assign(newUser, {
-        listIds: [],
-        dateAdded: new Date()
-      });
-
-      const { accessToken } = api.registerUser(newUser);
+      const { accessToken } = await api.registerUser(newUser);
       commit("SET_TOKEN", accessToken);
 
-      newUser.id = api.parseJWT(accessToken).sub;
-      delete newUser.listIds;
+      newUser.id = await api.parseJWT(accessToken).sub;
       newUser.lists = [];
 
       commit("SET_CURRENT_USER", newUser);
     },
 
-    async login({ commit }, credentials) {}
+    async login({ commit, dispatch }, credentials) {
+      const { accessToken } = await api.login(credentials);
+      commit("SET_TOKEN", accessToken);
+
+      const userId = api.parseJWT(accessToken).sub;
+      const userDetails = await api.getUser(userId);
+      userDetails.lists = [];
+      commit("SET_CURRENT_USER", userDetails);
+
+      await dispatch("getUserLists");
+    },
+
+    async getUserLists({ commit, dispatch }) {
+      let lists;
+      try {
+        lists = await api.getLists();
+      } catch (e) {
+        // no lists on server
+        if (e.response.status === 403) {
+          lists = [];
+        } else {
+          throw e;
+        }
+      }
+
+      lists.forEach(list => (list.books = []));
+      commit("SET_LISTS", lists);
+
+      await dispatch("populateListBooks");
+    },
+
+    populateListBooks({ commit, state }) {
+      state.currentUser.lists.forEach(list => {
+        list.bookIds.forEach(bookId => {
+          const book = state.books.find(maybeBook => maybeBook.id === bookId);
+          commit("ADD_BOOK_TO_LIST", { list, book });
+        });
+      });
+    }
   },
 
   getters: {
