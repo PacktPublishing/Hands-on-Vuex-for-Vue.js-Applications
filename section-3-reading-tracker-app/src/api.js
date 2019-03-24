@@ -37,6 +37,6 @@ export function getLists() {
   return axios.get(`/api/lists`).then(extractData);
 }
 
-async function updateList(listId, update) {
+export function updateList(listId, update) {
   return axios.patch(`/api/lists/${listId}`, update).then(extractData);
 }
