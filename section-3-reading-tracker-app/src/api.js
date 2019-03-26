@@ -16,10 +16,6 @@ export function login(credentials) {
   return axios.post("/api/login", credentials).then(extractData);
 }
 
-export function getUser(userId) {
-  return axios.get(`/api/users/${userId}`).then(extractData);
-}
-
 export function setToken(newToken) {
   axios.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
 }
@@ -27,6 +23,10 @@ export function setToken(newToken) {
 export function parseJWT(token) {
   const userJSON = atob(token.split(".")[1]);
   return JSON.parse(userJSON);
+}
+
+export function getUser(userId) {
+  return axios.get(`/api/users/${userId}`).then(extractData);
 }
 
 export function createList(newList) {
