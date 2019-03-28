@@ -43,7 +43,7 @@
                 to="/login"
                 active-class="is-active"
               >
-                {{ $store.getters.isLoggedIn ? "Change User" : "Login" }}
+                {{ $store.state.currentUser ? "Change User" : "Login" }}
               </router-link>
             </div>
           </div>
