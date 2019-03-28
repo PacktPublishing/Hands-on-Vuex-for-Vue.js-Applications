@@ -54,7 +54,7 @@ export default new Vuex.Store({
       const { accessToken } = await api.registerUser(newUser);
       commit("SET_TOKEN", accessToken);
 
-      newUser.id = await api.parseJWT(accessToken).sub;
+      newUser.id = api.parseJWT(accessToken).sub;
       newUser.lists = [];
 
       commit("SET_CURRENT_USER", newUser);
