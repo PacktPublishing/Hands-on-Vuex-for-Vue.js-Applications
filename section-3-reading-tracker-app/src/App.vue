@@ -15,7 +15,7 @@
       </div>
 
       <div class="navbar-menu" :class="{ 'is-active': burgerOpen }">
-        <div v-show="$store.state.currentUser" class="navbar-start">
+        <div v-show="$store.state.user.current" class="navbar-start">
           <router-link
             class="navbar-item"
             :to="{ path: '/books' }"
@@ -51,7 +51,7 @@
                 :to="{ path: '/login' }"
                 active-class="is-active"
               >
-                {{ $store.state.currentUser ? "Change User" : "Login" }}
+                {{ $store.state.user.current ? "Change User" : "Login" }}
               </router-link>
             </div>
           </div>
