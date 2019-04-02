@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { types as actions } from "@/store/actions";
+import { actions as userActions } from "@/store/user.module";
 
 export default {
   data() {
@@ -28,7 +28,7 @@ export default {
 
   methods: {
     async login() {
-      await this.$store.dispatch(actions.LOGIN, this.credentials);
+      await this.$store.dispatch(userActions.LOGIN, this.credentials);
       this.$router.push("books");
     }
   }
