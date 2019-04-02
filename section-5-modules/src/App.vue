@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <h1>Introducing Modules</h1>
+    <div>{{ $store.state.user.userName }}</div>
+    <button @click="$store.commit('user/SET_USER_NAME', 'Jane Doe')">
+      Change Name
+    </button>
   </div>
 </template>
 
