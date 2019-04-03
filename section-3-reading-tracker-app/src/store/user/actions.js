@@ -1,6 +1,6 @@
 import * as api from "../../api.js";
 import { types as mutations } from "./mutations";
-import { mutations as listsMutations } from "../lists/mutations";
+import { types as listsMutations } from "../lists/mutations";
 
 export const types = {
   REGISTER_USER: "REGISTER_USER",

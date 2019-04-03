@@ -69,6 +69,7 @@
 
 <script>
 import { types as actions } from "@/store/actions";
+
 export default {
   data() {
     return {

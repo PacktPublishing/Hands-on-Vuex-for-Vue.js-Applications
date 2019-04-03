@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { actions as userActions } from "@/store/user.module";
+import { types as actions } from "@/store/user/actions";
 
 export default {
   data() {
@@ -43,7 +43,7 @@ export default {
 
   methods: {
     async addNewUser() {
-      await this.$store.dispatch(userActions.REGISTER_USER, {
+      await this.$store.dispatch(actions.REGISTER_USER, {
         name: this.name,
         bio: this.bio,
         email: this.email,
