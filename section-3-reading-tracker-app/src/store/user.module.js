@@ -72,10 +72,12 @@ export default {
       await dispatch(actions.POPULATE_LIST_BOOKS);
     },
 
-    [actions.POPULATE_LIST_BOOKS]({ commit, state }) {
+    [actions.POPULATE_LIST_BOOKS]({ commit, state, rootState }) {
       state.current.lists.forEach(list => {
         list.bookIds.forEach(bookId => {
-          const book = state.books.find(maybeBook => maybeBook.id === bookId);
+          const book = rootState.books.find(
+            maybeBook => maybeBook.id === bookId
+          );
           commit(globalMutations.ADD_BOOK_TO_LIST, { list, book });
         });
       });
