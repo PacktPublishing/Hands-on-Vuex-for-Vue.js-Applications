@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      list: this.$store.getters.listById(this.$route.params.id)
+      list: this.$store.getters["lists/byId"](this.$route.params.id) // MENTION: at the time of this video, that's the only way. in the future, there may be an option to do $store.getters.lists.byId (no string constants :)
     };
   }
 };

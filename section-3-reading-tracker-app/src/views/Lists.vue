@@ -9,7 +9,7 @@
 
     <div
       class="columns"
-      v-for="list in $store.state.user.current.lists"
+      v-for="list in $store.state.lists.lists"
       :key="list.id"
     >
       <div class="column">

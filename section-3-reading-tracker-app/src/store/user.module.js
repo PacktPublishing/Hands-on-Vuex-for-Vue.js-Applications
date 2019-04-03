@@ -1,5 +1,5 @@
 import * as api from "../api.js";
-import { types as rootMutations } from "./mutations";
+import { mutations as listsMutations } from "./lists.module";
 
 export const mutations = {
   SET_TOKEN: "SET_TOKEN",
@@ -36,7 +36,6 @@ export default {
       commit(mutations.SET_TOKEN, accessToken);
 
       newUser.id = api.parseJWT(accessToken).sub;
-      newUser.lists = [];
 
       commit(mutations.SET_CURRENT_USER, newUser);
     },
@@ -67,7 +66,7 @@ export default {
       }
 
       lists.forEach(list => (list.books = []));
-      commit(rootMutations.SET_LISTS, lists);
+      commit(`lists/${listsMutations.SET_LISTS}`, lists, { root: true });
 
       await dispatch(actions.POPULATE_LIST_BOOKS);
     },
@@ -78,7 +77,11 @@ export default {
           const book = rootState.books.find(
             maybeBook => maybeBook.id === bookId
           );
-          commit(rootMutations.ADD_BOOK_TO_LIST, { list, book });
+          commit(
+            `lists/${listsMutations.ADD_BOOK_TO_LIST}`,
+            { list, book },
+            { root: true }
+          );
         });
       });
     }
