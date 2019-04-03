@@ -1,5 +1,5 @@
 import * as api from "../api.js";
-import { types as globalMutations } from "./mutations";
+import { types as rootMutations } from "./mutations";
 
 export const mutations = {
   SET_TOKEN: "SET_TOKEN",
@@ -67,7 +67,7 @@ export default {
       }
 
       lists.forEach(list => (list.books = []));
-      commit(globalMutations.SET_LISTS, lists);
+      commit(rootMutations.SET_LISTS, lists);
 
       await dispatch(actions.POPULATE_LIST_BOOKS);
     },
@@ -78,7 +78,7 @@ export default {
           const book = rootState.books.find(
             maybeBook => maybeBook.id === bookId
           );
-          commit(globalMutations.ADD_BOOK_TO_LIST, { list, book });
+          commit(rootMutations.ADD_BOOK_TO_LIST, { list, book });
         });
       });
     }
