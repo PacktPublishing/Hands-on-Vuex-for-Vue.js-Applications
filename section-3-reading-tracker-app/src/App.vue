@@ -3,11 +3,19 @@
     <nav class="navbar">
       <div class="navbar-menu">
         <div class="navbar-start">
-          <router-link class="navbar-item" to="/books" active-class="is-active">
+          <router-link
+            class="navbar-item"
+            :to="{ path: '/books' }"
+            active-class="is-active"
+          >
             Books
           </router-link>
 
-          <router-link class="navbar-item" to="/lists" active-class="is-active">
+          <router-link
+            class="navbar-item"
+            :to="{ path: '/lists' }"
+            active-class="is-active"
+          >
             Lists
           </router-link>
         </div>
@@ -17,7 +25,7 @@
             <div class="buttons">
               <router-link
                 class="button is-primary"
-                to="/adduser"
+                :to="{ path: '/adduser' }"
                 active-class="is-active"
               >
                 <strong>
@@ -27,7 +35,7 @@
 
               <router-link
                 class="button is-light"
-                to="/login"
+                :to="{ path: '/login' }"
                 active-class="is-active"
               >
                 Login
