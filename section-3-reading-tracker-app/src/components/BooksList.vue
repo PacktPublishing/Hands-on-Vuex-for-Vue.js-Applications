@@ -37,7 +37,7 @@
         <b-field>
           <b-taginput
             placeholder="Add book to list"
-            :value="$store.getters.listsForBook(book)"
+            :value="$store.getters['lists/forBook'](book)"
             @typing="listSearch = $event"
             autocomplete
             :data="filteredLists"
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { types as actions } from "@/store/actions";
+import { actions } from "@/store/lists.module";
 
 export default {
   data() {
@@ -74,7 +74,7 @@ export default {
 
   computed: {
     filteredLists() {
-      return this.$store.state.user.current.lists.filter(
+      return this.$store.state.lists.lists.filter(
         list =>
           list.name.toLowerCase().indexOf(this.listSearch.toLowerCase()) >= 0
       );
@@ -83,11 +83,14 @@ export default {
 
   methods: {
     addToList(book, list) {
-      this.$store.dispatch(actions.ADD_BOOK_TO_LIST, { book, list });
+      this.$store.dispatch(`lists/${actions.ADD_BOOK_TO_LIST}`, { book, list });
     },
 
     removeFromList(book, list) {
-      this.$store.dispatch(actions.REMOVE_BOOK_FROM_LIST, { book, list });
+      this.$store.dispatch(`lists/${actions.REMOVE_BOOK_FROM_LIST}`, {
+        book,
+        list
+      });
     }
   }
 };

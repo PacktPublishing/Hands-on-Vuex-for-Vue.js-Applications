@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { types as actions } from "@/store/actions";
+import { actions } from "@/store/lists.module";
 
 export default {
   data() {
@@ -28,7 +28,7 @@ export default {
 
   methods: {
     submitNewList() {
-      this.$store.dispatch(actions.CREATE_LIST, {
+      this.$store.dispatch(`lists/${actions.CREATE_LIST}`, {
         name: this.name,
         description: this.description
       });
