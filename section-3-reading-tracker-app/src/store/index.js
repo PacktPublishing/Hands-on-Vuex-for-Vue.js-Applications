@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import userModule from "./user.module";
-import listsModule from "./lists.module";
+import userModule from "./user";
+import listsModule from "./lists";
 import mutations from "./mutations";
 import actions from "./actions";
 

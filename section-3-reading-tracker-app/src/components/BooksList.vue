@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { actions } from "@/store/lists.module";
+import { types as actions } from "@/store/lists/actions";
 
 export default {
   data() {
