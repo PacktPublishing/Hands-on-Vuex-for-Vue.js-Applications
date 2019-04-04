@@ -50,10 +50,10 @@ export default {
     await dispatch(types.POPULATE_LIST_BOOKS);
   },
 
-  [types.POPULATE_LIST_BOOKS]({ commit, state }) {
+  [types.POPULATE_LIST_BOOKS]({ commit, state, rootState }) {
     state.current.lists.forEach(list => {
       list.bookIds.forEach(bookId => {
-        const book = state.books.find(maybeBook => maybeBook.id === bookId);
+        const book = rootState.books.find(maybeBook => maybeBook.id === bookId);
         commit(
           `lists/${listsMutations.ADD_BOOK_TO_LIST}`,
           { list, book },
