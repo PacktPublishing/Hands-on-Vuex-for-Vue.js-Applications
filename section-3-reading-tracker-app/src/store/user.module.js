@@ -46,7 +46,6 @@ export default {
 
       const userId = api.parseJWT(accessToken).sub;
       const userDetails = await api.getUser(userId);
-      userDetails.lists = [];
       commit(mutations.SET_CURRENT_USER, userDetails);
 
       await dispatch(actions.GET_USER_LISTS);
@@ -71,8 +70,8 @@ export default {
       await dispatch(actions.POPULATE_LIST_BOOKS);
     },
 
-    [actions.POPULATE_LIST_BOOKS]({ commit, state, rootState }) {
-      state.current.lists.forEach(list => {
+    [actions.POPULATE_LIST_BOOKS]({ commit, rootState }) {
+      rootState.lists.lists.forEach(list => {
         list.bookIds.forEach(bookId => {
           const book = rootState.books.find(
             maybeBook => maybeBook.id === bookId
