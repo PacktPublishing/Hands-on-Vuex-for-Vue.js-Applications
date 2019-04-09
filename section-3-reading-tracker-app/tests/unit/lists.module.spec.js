@@ -7,7 +7,7 @@ describe("Mutations", () => {
     store.commit(`lists/${mutations.SET_LISTS}`, [mockData.TEST_LIST]);
 
     expect(store.state.lists.lists.length).toBe(1);
-    expect(store.state.lists.lists[0]).toBe(mockData.TEST_LIST);
+    expect(store.state.lists.lists[0]).toEqual(mockData.TEST_LIST);
   });
 
   it("Should create list", () => {
@@ -15,23 +15,23 @@ describe("Mutations", () => {
     store.commit(`lists/${mutations.CREATE_LIST}`, mockData.TEST_LIST);
 
     expect(store.state.lists.lists.length).toBe(1);
-    expect(store.state.lists.lists[0]).toBe(mockData.TEST_LIST);
+    expect(store.state.lists.lists[0]).toEqual(mockData.TEST_LIST);
   });
 
   it("Should add book to list", () => {
     store.commit(`lists/${mutations.ADD_BOOK_TO_LIST}`, {
       book: mockData.BOOKS[0],
-      list: mockData.TEST_LIST
+      list: store.state.lists.lists[0]
     });
 
     expect(store.state.lists.lists[0].books.length).toBe(1);
-    expect(store.state.lists.lists[0].books[0]).toBe(mockData.BOOKS[0]);
+    expect(store.state.lists.lists[0].books[0]).toEqual(mockData.BOOKS[0]);
   });
 
   it("Should remove book from list", () => {
     store.commit(`lists/${mutations.REMOVE_BOOK_FROM_LIST}`, {
       book: mockData.BOOKS[0],
-      list: mockData.TEST_LIST
+      list: store.state.lists.lists[0]
     });
     expect(store.state.lists.lists[0].books.length).toBe(0);
   });
