@@ -1,6 +1,6 @@
 import store from "@/store";
 import axios from "axios";
-import * as mockData from "./helpers";
+import { mockData } from "./helpers";
 import { types as mutations } from "@/store/user/mutations";
 
 describe("Mutations", () => {
