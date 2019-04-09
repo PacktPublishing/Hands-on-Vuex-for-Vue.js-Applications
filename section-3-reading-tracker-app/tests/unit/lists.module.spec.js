@@ -1,5 +1,5 @@
 import store from "@/store";
-import { mockData } from "./helpers";
+import mockData from "./mockData";
 import { types as mutations } from "@/store/lists/mutations";
 
 describe("Mutations", () => {
