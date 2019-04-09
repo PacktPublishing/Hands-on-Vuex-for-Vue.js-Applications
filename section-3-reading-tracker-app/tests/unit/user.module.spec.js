@@ -15,6 +15,6 @@ describe("Mutations", () => {
 
   it("Should correctly set current user", () => {
     store.commit(mutations.SET_CURRENT_USER, mockData.NEW_USER);
-    expect(store.state.user.current).toBe(mockData.NEW_USER);
+    expect(store.state.user.current).toEqual(mockData.NEW_USER);
   });
 });
