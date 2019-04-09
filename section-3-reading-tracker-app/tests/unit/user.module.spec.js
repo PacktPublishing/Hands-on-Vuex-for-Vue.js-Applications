@@ -7,8 +7,6 @@ import { types as actions } from "@/store/user/actions";
 import actionImpls from "@/store/user/actions";
 import { types as listsMutations } from "@/store/lists/mutations";
 
-jest.mock("@/api.js");
-
 describe("Mutations", () => {
   beforeEach(resetState);
 
@@ -31,14 +29,14 @@ describe("Actions", () => {
   beforeEach(resetState);
 
   it("Should register new user", async () => {
-    await store.dispatch(actions.REGISTER_USER, NEW_USER);
+    await store.dispatch(actions.REGISTER_USER, mockData.NEW_USER);
 
     expect(store.state.user.token).toBeTruthy();
     expect(store.state.user.current.id).toBeDefined();
   });
 
   it("Should login", async () => {
-    await store.dispatch(actions.LOGIN, NEW_USER);
+    await store.dispatch(actions.LOGIN, mockData.NEW_USER);
 
     expect(store.state.user.token).toBeTruthy();
     expect(store.state.user.current.id).toBeDefined();
