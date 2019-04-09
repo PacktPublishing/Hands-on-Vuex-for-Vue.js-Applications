@@ -1,5 +1,6 @@
 import axios from "axios";
 import store from "@/store";
+jest.mock("@/api");
 import mockData from "../mockData";
 import { resetState } from "./helpers";
 
