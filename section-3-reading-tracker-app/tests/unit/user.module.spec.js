@@ -1,9 +1,12 @@
-import store from "@/store";
 import axios from "axios";
+import store from "@/store";
 import mockData from "./mockData";
+import { resetState } from "./helpers";
 import { types as mutations } from "@/store/user/mutations";
 
 describe("Mutations", () => {
+  beforeEach(resetState);
+
   it("Should correctly set token", () => {
     store.commit(mutations.SET_TOKEN, mockData.AUTH_RESPONSE.accessToken);
 
