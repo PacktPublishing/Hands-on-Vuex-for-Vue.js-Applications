@@ -1,17 +1,24 @@
 import BOOKS from "@/../backend/books";
 
+// Use getters everywhere to return new instance of object each time
 export default {
-  BOOKS,
-
-  NEW_USER: {
-    name: "John Doe",
-    bio: "I like books",
-    email: "test@email.com",
-    password: "123456"
+  get BOOKS() {
+    return BOOKS;
   },
 
-  AUTH_RESPONSE: {
-    accessToken: `abcd.${btoa(JSON.stringify({ sub: 0 }))}.efgh`
+  get NEW_USER() {
+    return {
+      name: "John Doe",
+      bio: "I like books",
+      email: "test@email.com",
+      password: "123456"
+    };
+  },
+
+  get AUTH_RESPONSE() {
+    return {
+      accessToken: `abcd.${btoa(JSON.stringify({ sub: 0 }))}.efgh`
+    };
   },
 
   get SERVER_USER() {
@@ -21,12 +28,14 @@ export default {
     });
   },
 
-  TEST_LIST: {
-    id: 0,
-    userId: 0,
-    name: "Cool Books",
-    description: "Books I think are cool",
-    bookIds: [],
-    books: []
+  get TEST_LIST() {
+    return {
+      id: 0,
+      userId: 0,
+      name: "Cool Books",
+      description: "Books I think are cool",
+      bookIds: [],
+      books: []
+    };
   }
 };
