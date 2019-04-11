@@ -76,8 +76,11 @@ export default {
   },
 
   created() {
-    this.$router.replace("login");
     this.$store.dispatch("loadBooks");
+
+    if (this.$route.fullPath !== "/adduser") {
+      this.$router.replace("login");
+    }
   }
 };
 </script>
