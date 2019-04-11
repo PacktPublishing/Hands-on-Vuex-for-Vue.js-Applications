@@ -10,8 +10,13 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-new Vue({
+const app = new Vue({
+  el: "#app",
   router,
   store,
   render: h => h(App)
-}).$mount("#app");
+});
+
+if (window.Cypress) {
+  window.app = app; // add global access to app for e2e tests
+}
