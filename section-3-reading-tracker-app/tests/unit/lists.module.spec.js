@@ -1,5 +1,5 @@
 import store from "@/store";
-import mockData from "./mockData";
+import mockData from "../mockData";
 import { resetState } from "./helpers";
 import { types as mutations } from "@/store/lists/mutations";
 
