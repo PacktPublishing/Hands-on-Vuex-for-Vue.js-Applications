@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import mockData from "@/../tests/unit/mockData";
+import mockData from "@/../tests/mockData";
 
 export const getBooks = jest.fn().mockResolvedValue(mockData.BOOKS);
 
