@@ -53,7 +53,7 @@ describe("Mutations", () => {
   });
 });
 
-describe.only("Actions", () => {
+describe("Actions", () => {
   it("Should create list", async () => {
     api.createList.mockClear();
     const commit = jest.fn();
