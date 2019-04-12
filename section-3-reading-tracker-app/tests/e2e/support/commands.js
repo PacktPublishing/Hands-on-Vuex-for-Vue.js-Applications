@@ -24,4 +24,26 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+import mockData from "../../mockData";
+import { types as userActions } from "@/store/user/actions";
+
+Cypress.Commands.add("navigate", path =>
+  cy
+    .window()
+    .its("app.$router")
+    .invoke("push", { path })
+);
+
 Cypress.Commands.add("getStore", () => cy.window().its("app.$store"));
+
+Cypress.Commands.add("register", () => {
+  cy.getStore().then(({ dispatch }) =>
+    dispatch(userActions.REGISTER_USER, mockData.NEW_USER)
+  );
+});
+
+Cypress.Commands.add("login", () => {
+  cy.getStore().then(({ dispatch }) =>
+    dispatch(userActions.LOGIN, mockData.NEW_USER)
+  );
+});
