@@ -8,7 +8,7 @@ export const registerUser = jest.fn().mockResolvedValue(mockData.AUTH_RESPONSE);
 
 export const login = jest.fn().mockResolvedValue(mockData.AUTH_RESPONSE);
 
-export { parseJWT, setToken } from "@/api";
+export const { parseJWT, setToken } = jest.requireActual("@/api");
 
 export const getUser = jest.fn().mockResolvedValue(mockData.SERVER_USER);
 
@@ -16,8 +16,8 @@ export const createList = jest.fn().mockResolvedValue(mockData.TEST_LIST);
 
 export const getLists = jest
   .fn()
-  .mockResolvedValueOnce([])
-  .mockResolvedValueOnce([])
+  .mockResolvedValueOnce([mockData.TEST_LIST])
+  .mockResolvedValueOnce([mockData.TEST_LIST])
   .mockRejectedValueOnce({
     response: {
       status: 403
