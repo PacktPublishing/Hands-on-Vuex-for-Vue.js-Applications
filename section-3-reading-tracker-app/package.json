@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint",
     "api": "node ./backend/server.js",
     "start": "concurrently --kill-others --raw \"npm:serve\" \"npm:api\" ",
-    "test:e2e": "concurrently --kill-others --raw \"vue-cli-service test:e2e\" \"npm:api\"",
+    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -25,7 +25,7 @@
     "@vue/cli-plugin-babel": "3.6.0",
     "@vue/cli-plugin-e2e-cypress": "3.6.0",
     "@vue/cli-plugin-eslint": "3.6.0",
-    "@vue/cli-plugin-unit-jest": "^3.6.3",
+    "@vue/cli-plugin-unit-jest": "3.6.3",
     "@vue/cli-service": "3.6.0",
     "@vue/eslint-config-prettier": "4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
