@@ -1,6 +1,6 @@
 import store from "@/store";
 import mockData from "../mockData";
-import * as api from "@/api.js";
+import * as api from "@/api";
 jest.mock("@/api");
 import { resetState } from "./helpers";
 
@@ -69,8 +69,8 @@ describe("Actions", () => {
       },
       mockData.TEST_LIST
     );
-    expect(commit).lastCalledWith(mutations.CREATE_LIST, expect.anything());
 
+    expect(commit).lastCalledWith(mutations.CREATE_LIST, expect.anything());
     expect(api.createList).toHaveBeenCalled();
   });
 
