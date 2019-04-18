@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { examplePlugin } from "./plugin";
 
 Vue.use(Vuex);
 
@@ -24,5 +25,7 @@ export default new Vuex.Store({
         }, 1000)
       );
     }
-  }
+  },
+
+  plugins: [examplePlugin]
 });
