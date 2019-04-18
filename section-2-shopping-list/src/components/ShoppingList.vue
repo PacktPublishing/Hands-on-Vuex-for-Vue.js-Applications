@@ -8,8 +8,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="item in $store.state.shoppingList"
-            :key="item.id">
+        <tr v-for="item in $store.state.shoppingList" :key="item.id">
           <td>{{ item.name }}</td>
           <td>{{ item.price }}</td>
           <td>{{ item.quantity }}</td>
