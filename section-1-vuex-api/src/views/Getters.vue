@@ -4,8 +4,7 @@
 
     <div>Count is {{ $store.state.count }}</div>
 
-    <button class="pure-button"
-            @click="$store.dispatch('addToCount', 1)">
+    <button class="pure-button" @click="$store.dispatch('addToCount', 1)">
       Increment
     </button>
   </div>
