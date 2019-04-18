@@ -21,5 +21,5 @@ export default new Vuex.Store({
       newList.id = nextId++;
       state.lists.push(newList);
     }
-  },
+  }
 });
