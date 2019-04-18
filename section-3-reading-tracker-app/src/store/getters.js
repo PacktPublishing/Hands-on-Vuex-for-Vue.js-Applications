@@ -1,6 +1,7 @@
 export default {
   listById(state) {
-    return id => state.user.current.lists.find(list => list.id === parseInt(id));
+    return id =>
+      state.user.current.lists.find(list => list.id === parseInt(id));
   },
 
   listsForBook(state) {
