@@ -1,6 +1,5 @@
 import * as api from "../../api.js";
 import { types as mutations } from "./mutations";
-import { types as listsMutations } from "../lists/mutations";
 
 export const types = {
   REGISTER_USER: "REGISTER_USER",
@@ -10,7 +9,9 @@ export const types = {
 };
 
 export default {
-  async [types.REGISTER_USER]({ commit }, newUser) {
+  async [types.REGISTER_USER]({ commit, dispatch }, newUser) {
+    await dispatch("entities/lists/delete");
+
     const { accessToken } = await api.registerUser(newUser);
     commit(mutations.SET_TOKEN, accessToken);
 
@@ -20,6 +21,8 @@ export default {
   },
 
   async [types.LOGIN]({ commit, dispatch }, credentials) {
+    await dispatch("entities/lists/delete");
+
     const { accessToken } = await api.login(credentials);
     commit(mutations.SET_TOKEN, accessToken);
 
@@ -30,7 +33,7 @@ export default {
     await dispatch(types.GET_USER_LISTS);
   },
 
-  async [types.GET_USER_LISTS]({ commit, dispatch, state }) {
+  async [types.GET_USER_LISTS]({ state, dispatch }) {
     let lists;
     try {
       lists = await api.getLists(state.current.id);
@@ -43,22 +46,6 @@ export default {
       }
     }
 
-    lists.forEach(list => (list.books = []));
-    commit(`lists/${listsMutations.SET_LISTS}`, lists, { root: true });
-
-    await dispatch(types.POPULATE_LIST_BOOKS);
-  },
-
-  [types.POPULATE_LIST_BOOKS]({ commit, rootState }) {
-    rootState.lists.lists.forEach(list => {
-      list.bookIds.forEach(bookId => {
-        const book = rootState.books.find(maybeBook => maybeBook.id === bookId);
-        commit(
-          `lists/${listsMutations.ADD_BOOK_TO_LIST}`,
-          { list, book },
-          { root: true }
-        );
-      });
-    });
+    dispatch("entities/lists/insert", { data: lists }, { root: true });
   }
 };

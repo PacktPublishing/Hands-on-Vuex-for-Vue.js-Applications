@@ -28,7 +28,7 @@ export default {
 
   methods: {
     submitNewList() {
-      this.$store.dispatch(`lists/${actions.CREATE_LIST}`, {
+      this.$store.dispatch(`entities/lists/${actions.CREATE_LIST}`, {
         name: this.name,
         description: this.description
       });

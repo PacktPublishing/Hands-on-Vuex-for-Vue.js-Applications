@@ -13,10 +13,12 @@ export default {
     BooksList
   },
 
-  data() {
-    return {
-      list: this.$store.getters["lists/byId"](this.$route.params.id)
-    };
+  computed: {
+    list() {
+      return this.$store.getters["entities/lists/query"]()
+        .with("books")
+        .find(this.$route.params.id);
+    }
   }
 };
 </script>

@@ -9,7 +9,7 @@
 
     <div
       class="columns"
-      v-for="list in $store.state.lists.lists"
+      v-for="list in $store.getters['entities/lists/all']()"
       :key="list.id"
     >
       <div class="column">

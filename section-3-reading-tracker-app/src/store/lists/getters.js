@@ -1,9 +1,10 @@
-export default {
-  byId(state) {
-    return id => state.lists.find(list => list.id === parseInt(id));
-  },
+import { List } from "@/store/orm-models";
 
-  forBook(state) {
-    return book => state.lists.filter(list => list.books.indexOf(book) >= 0);
+export default {
+  forBook() {
+    return ({ id }) =>
+      List.query()
+        .where("bookIds", bookIds => bookIds.includes(id))
+        .get();
   }
 };

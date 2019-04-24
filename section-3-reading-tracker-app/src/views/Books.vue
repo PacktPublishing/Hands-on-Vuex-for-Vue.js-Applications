@@ -4,7 +4,7 @@
 
     <books-list :books="currentBooksPage"></books-list>
     <b-pagination
-      :total="$store.state.books.length"
+      :total="$store.getters['entities/books/all']().length"
       :current.sync="currentPage"
       :per-page="itemsPerPage"
     >
@@ -30,10 +30,11 @@ export default {
 
   computed: {
     currentBooksPage() {
-      return this.$store.state.books.slice(
-        (this.currentPage - 1) * this.itemsPerPage,
-        this.currentPage * this.itemsPerPage
-      );
+      return this.$store.getters["entities/books/query"]()
+        .with("lists")
+        .offset((this.currentPage - 1) * this.itemsPerPage)
+        .limit(this.itemsPerPage)
+        .get();
     }
   }
 };
