@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import VuexORM from "@vuex-orm/core";
 
-import { Book, List } from "./orm-models";
+import { Book, List } from "./models";
 import userModule from "./user";
 import listsModule from "./lists";
 import actions from "./actions";
