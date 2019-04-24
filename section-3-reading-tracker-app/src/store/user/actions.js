@@ -46,6 +46,6 @@ export default {
       }
     }
 
-    dispatch("entities/lists/insert", { data: lists }, { root: true });
+    dispatch("entities/lists/create", { data: lists }, { root: true });
   }
 };

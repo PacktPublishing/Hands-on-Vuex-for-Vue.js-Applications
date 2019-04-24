@@ -7,7 +7,7 @@ export const types = {
 export default {
   async [types.LOAD_BOOKS]({ dispatch }) {
     const books = await api.getBooks();
-    dispatch("entities/books/insert", {
+    dispatch("entities/books/create", {
       data: books
     });
   }
