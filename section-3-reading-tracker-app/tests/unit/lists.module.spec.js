@@ -11,56 +11,45 @@ import actionImpls from "@/store/lists/actions";
 describe("Mutations", () => {
   beforeEach(resetState);
 
-  it("Should set lists", () => {
-    store.commit(`lists/${mutations.SET_LISTS}`, [mockData.TEST_LIST]);
+  it("Should add book to list", async () => {
+    await store.dispatch("entities/lists/insert", mockData.TEST_LIST);
 
-    expect(store.state.lists.lists.length).toBe(1);
-    expect(store.state.lists.lists[0]).toEqual(mockData.TEST_LIST);
-  });
-
-  it("Should create list", () => {
-    store.commit(`lists/${mutations.CREATE_LIST}`, mockData.TEST_LIST);
-
-    expect(store.state.lists.lists.length).toBe(1);
-    expect(store.state.lists.lists[0]).toEqual(mockData.TEST_LIST);
-  });
-
-  it("Should add book to list", () => {
-    store.commit(`lists/${mutations.CREATE_LIST}`, mockData.TEST_LIST);
-
-    store.commit(`lists/${mutations.ADD_BOOK_TO_LIST}`, {
+    store.commit("entities/lists/${mutations.ADD_BOOK_TO_LIST}", {
       book: mockData.BOOKS[0],
-      list: store.state.lists.lists[0]
+      list: store.getters["entities/lists/all"]()[0]
     });
 
-    expect(store.state.lists.lists[0].books.length).toBe(1);
-    expect(store.state.lists.lists[0].books[0]).toEqual(mockData.BOOKS[0]);
+    expect(store.getters["entities/lists/all"]()[0].books.length).toBe(1);
+    expect(store.getters["entities/lists/all"]()[0].books[0]).toEqual(
+      mockData.BOOKS[0]
+    );
   });
 
-  it("Should remove book from list", () => {
-    store.commit(`lists/${mutations.CREATE_LIST}`, mockData.TEST_LIST);
-    store.commit(`lists/${mutations.ADD_BOOK_TO_LIST}`, {
+  it("Should remove book from list", async () => {
+    await store.dispatch(`entities/lists/insert`, mockData.TEST_LIST);
+
+    store.commit(`entities/lists/${mutations.ADD_BOOK_TO_LIST}`, {
       book: mockData.BOOKS[0],
-      list: store.state.lists.lists[0]
+      list: store.getters["entities/lists/all"]()[0]
     });
 
-    store.commit(`lists/${mutations.REMOVE_BOOK_FROM_LIST}`, {
+    store.commit(`entities/lists/${mutations.REMOVE_BOOK_FROM_LIST}`, {
       book: mockData.BOOKS[0],
-      list: store.state.lists.lists[0]
+      list: store.getters["lists/all"]()[0]
     });
 
-    expect(store.state.lists.lists[0].books.length).toBe(0);
+    expect(store.getters["entities/lists/all"]()[0].books.length).toBe(0);
   });
 });
 
 describe("Actions", () => {
   it("Should create list", async () => {
     api.createList.mockClear();
-    const commit = jest.fn();
+    const dispatch = jest.fn();
 
     await actionImpls[actions.CREATE_LIST](
       {
-        commit,
+        dispatch,
         rootState: {
           user: {
             current: mockData.SERVER_USER
@@ -70,7 +59,9 @@ describe("Actions", () => {
       mockData.TEST_LIST
     );
 
-    expect(commit).lastCalledWith(mutations.CREATE_LIST, expect.anything());
+    expect(dispatch).lastCalledWith("insert", {
+      data: expect.anything()
+    });
     expect(api.createList).toHaveBeenCalled();
   });
 

@@ -4,8 +4,7 @@ import { types as mutations } from "./mutations";
 export const types = {
   REGISTER_USER: "REGISTER_USER",
   LOGIN: "LOGIN",
-  GET_USER_LISTS: "GET_USER_LISTS",
-  POPULATE_LIST_BOOKS: "POPULATE_LIST_BOOKS"
+  GET_USER_LISTS: "GET_USER_LISTS"
 };
 
 export default {

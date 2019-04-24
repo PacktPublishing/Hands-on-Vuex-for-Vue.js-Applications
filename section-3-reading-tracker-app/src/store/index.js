@@ -8,7 +8,6 @@ import listsModule from "./lists";
 import actions from "./actions";
 
 const database = new VuexORM.Database();
-
 database.register(Book);
 database.register(List, listsModule);
 
