@@ -11,7 +11,7 @@ import { sync } from "vuex-pathify";
 export default {
   name: "app",
   computed: {
-    value: sync("value")
+    value: sync("test/nested@message")
   }
 };
 </script>

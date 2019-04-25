@@ -8,7 +8,7 @@ const state = {
   value: 10,
   nested: {
     property: {
-      test: "it works!"
+      test: "It works!"
     }
   }
 };
