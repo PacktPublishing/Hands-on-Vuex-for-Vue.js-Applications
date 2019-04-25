@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <h1>Check the Console</h1>
-    <p>
-      Current Value: <strong>{{ $store.state.value }}</strong>
-    </p>
   </div>
 </template>
 
