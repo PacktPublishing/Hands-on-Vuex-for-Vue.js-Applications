@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <h1>Check the Console</h1>
-    <p>
-      Current Value: <strong>{{ $store.state.value }}</strong>
-    </p>
+    <input type="text" v-model="value" />
   </div>
 </template>
 
 <script>
+import { sync } from "vuex-pathify";
+
 export default {
-  name: "app"
+  name: "app",
+  computed: {
+    value: sync("value")
+  }
 };
 </script>
 
