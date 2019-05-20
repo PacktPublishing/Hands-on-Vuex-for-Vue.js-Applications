@@ -20,7 +20,7 @@ export default {
 
   async [types.REGISTER_USER]({ commit }, newUser) {
     const { accessToken } = await api.registerUser(newUser);
-    commit(types.SET_TOKEN, accessToken);
+    commit(mutations.SET_TOKEN, accessToken);
 
     newUser.id = api.parseJWT(accessToken).sub;
     newUser.lists = [];
